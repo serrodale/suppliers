@@ -14,7 +14,7 @@ import lombok.AllArgsConstructor;
 public class GetAllSuppliersDto {
 
   @JsonProperty
-  private Double code;
+  private Double id;
 
   @JsonProperty
   private String name;

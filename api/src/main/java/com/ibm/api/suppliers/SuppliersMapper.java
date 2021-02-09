@@ -23,7 +23,7 @@ public class SuppliersMapper {
   public static GetAllSuppliersDto toGetAllDto(Supplier entity) {
     return GetAllSuppliersDto
       .builder()
-      .code(entity.getId())
+      .id(entity.getId())
       .name(entity.getName())
       .build();
   }

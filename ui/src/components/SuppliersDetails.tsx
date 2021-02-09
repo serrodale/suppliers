@@ -6,10 +6,9 @@ import { GetOneSupplierDto } from '../dtos/suppliersDtos';
 
 interface Props {
   id: number;
-  onClose: () => void;
 }
 
-const SuppliersListItem: React.FC<Props> = ({ id, onClose }) => {
+const SuppliersListItem: React.FC<Props> = ({ id }) => {
   const [supplier, setSupplier] = React.useState<GetOneSupplierDto>();
 
   React.useEffect(() => {
@@ -22,14 +21,10 @@ const SuppliersListItem: React.FC<Props> = ({ id, onClose }) => {
   return (
     <>
       {
-      supplier
-        ? <p>{supplier.cif}</p>
-        : <p>Loading...</p>
+        supplier
+          ? <p>{supplier.cif}</p>
+          : <p>Loading...</p>
       }
-
-      <button onClick={() => onClose()}>
-        Close
-      </button>
     </>
   );
 }

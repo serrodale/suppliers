@@ -6,6 +6,7 @@ import SuppliersDetails from './SuppliersDetails';
 import SuppliersListItem from './SuppliersListItem';
 
 import { GetAllSuppliersDto } from '../dtos/suppliersDtos';
+import { List, Header, Container, Grid, Modal } from 'semantic-ui-react';
 
 const SuppliersList: React.FC = () => {
   const [suppliers, setSuppliers] = React.useState([]);
@@ -19,20 +20,35 @@ const SuppliersList: React.FC = () => {
   }, []);
 
   return (
-    <ul>
-      {suppliers.map((supplier: GetAllSuppliersDto) => (
-        <li onClick={() => setSelectedSupplier(supplier)}>
-          <SuppliersListItem supplier={supplier} />
-        </li>
-      ))}
+    <Container text>
+      <Grid columns='equal'>
+        <Header as='h1' content='Suppliers' />
+      </Grid>
+
+      <List divided relaxed>
+        {suppliers.map((supplier: GetAllSuppliersDto) => (
+          <li onClick={() => setSelectedSupplier(supplier)}>
+            <SuppliersListItem
+              key={supplier.id}
+              supplier={supplier}
+            />
+          </li>
+        ))}
+      </List>
 
       {selectedSupplier && (
-        <SuppliersDetails
-          id={selectedSupplier.id}
-          onClose={() => setSelectedSupplier(undefined)}
-        />
+        <Modal
+          size='tiny'
+          open={!!selectedSupplier}
+          centered={false}
+          onClose={() => setTimeout(() => setSelectedSupplier(undefined))}
+        >
+          <SuppliersDetails
+            id={selectedSupplier.id}
+          />
+        </Modal>
       )}
-    </ul>
+    </Container>
   );
 }
 

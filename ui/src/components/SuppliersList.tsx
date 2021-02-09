@@ -6,7 +6,7 @@ import SuppliersDetails from './SuppliersDetails';
 import SuppliersListItem from './SuppliersListItem';
 
 import { GetAllSuppliersDto } from '../dtos/suppliersDtos';
-import { List, Header, Container, Grid, Modal } from 'semantic-ui-react';
+import { List, Header, Container, Modal } from 'semantic-ui-react';
 
 const SuppliersList: React.FC = () => {
   const [suppliers, setSuppliers] = React.useState([]);
@@ -21,13 +21,14 @@ const SuppliersList: React.FC = () => {
 
   return (
     <Container text>
-      <Grid columns='equal'>
-        <Header as='h1' content='Suppliers' />
-      </Grid>
+      <Header as='h1' content='Suppliers' />
 
       <List divided relaxed>
         {suppliers.map((supplier: GetAllSuppliersDto) => (
-          <li onClick={() => setSelectedSupplier(supplier)}>
+          <li
+            key={supplier.id}
+            onClick={() => setSelectedSupplier(supplier)}
+          >
             <SuppliersListItem
               key={supplier.id}
               supplier={supplier}

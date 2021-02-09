@@ -28,7 +28,7 @@ public class SuppliersController {
     return this.suppliersService.getAllSuppliers();
   }
 
-  @GetMapping()
+  @GetMapping("/{id}")
   public Optional<GetOneSupplierDto> getOneSupplier(
     @PathVariable("id") Double id
   ) {

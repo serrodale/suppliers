@@ -1,9 +1,8 @@
 import React from 'react';
+import SuppliersList from './components/SuppliersList';
 
 const App: React.FC = () => {
-  return (
-    <div>App works!</div>
-  );
+  return <SuppliersList />;
 }
 
 export default App;

@@ -27,7 +27,10 @@ const SuppliersList: React.FC = () => {
       ))}
 
       {selectedSupplier && (
-        <SuppliersDetails id={selectedSupplier.id} />
+        <SuppliersDetails
+          id={selectedSupplier.id}
+          onClose={() => setSelectedSupplier(undefined)}
+        />
       )}
     </ul>
   );

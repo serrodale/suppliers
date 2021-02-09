@@ -1,0 +1,16 @@
+version: '3.7'
+
+services:
+  ui:
+    image: ui
+    ports:
+      - 80:3000
+    depends_on:
+      - api
+    build: ./ui
+    tty: true
+  api:
+    image: api
+    ports: 
+      - 8080:8080
+    build: ./api

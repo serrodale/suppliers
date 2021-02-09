@@ -8,7 +8,7 @@ interface Props {
   id: number;
 }
 
-const SuppliersListItem: React.FC<Props> = ({ id }) => {
+const SupplierDetails: React.FC<Props> = ({ id }) => {
   const [supplier, setSupplier] = React.useState<GetOneSupplierDto>();
 
   React.useEffect(() => {
@@ -29,4 +29,4 @@ const SuppliersListItem: React.FC<Props> = ({ id }) => {
   );
 }
 
-export default SuppliersListItem;
+export default SupplierDetails;

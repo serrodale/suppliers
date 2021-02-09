@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 
 import env from '../envs/env';
-import SuppliersDetails from './SuppliersDetails';
+import SupplierDetails from './SupplierDetails';
 import SuppliersListItem from './SuppliersListItem';
 
 import { GetAllSuppliersDto } from '../dtos/suppliersDtos';
@@ -41,10 +41,9 @@ const SuppliersList: React.FC = () => {
         <Modal
           size='tiny'
           open={!!selectedSupplier}
-          centered={false}
           onClose={() => setTimeout(() => setSelectedSupplier(undefined))}
         >
-          <SuppliersDetails
+          <SupplierDetails
             id={selectedSupplier.id}
           />
         </Modal>

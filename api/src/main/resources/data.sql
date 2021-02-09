@@ -1,0 +1,1 @@
+INSERT INTO SUPPLIERS (ID, NAME, CIF) VALUES (1, 'hola', 'hola');

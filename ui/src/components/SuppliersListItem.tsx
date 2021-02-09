@@ -7,7 +7,7 @@ interface Props {
 
 const SuppliersListItem: React.FC<Props> = ({ supplier }) => {
   return (
-    <>{supplier.name}</>
+    <>{supplier.name} ({supplier.id})</>
   );
 }
 

@@ -22,8 +22,8 @@ const SupplierDetails: React.FC<Props> = ({ id }) => {
     <>
       {
         supplier
-          ? <p>{supplier.cif}</p>
-          : <p>Loading...</p>
+          ? <>{supplier.name} ({supplier.cif}) [{supplier.createdAt}]</>
+          : <>Loading...</>
       }
     </>
   );
